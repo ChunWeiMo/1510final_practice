@@ -7,10 +7,9 @@ def process_readings(file_name):
     else:
         sum_of_integer = sum_of_integers(integer_list)
         with open(file_name, 'a') as file_object:
-            file_object.write(str(sum_of_integer))
-            
-    
-        
+            file_object.write('\n'+str(sum_of_integer))
+
+
 def sum_of_integers(integer_list):
     sum_of_integer = 0
     for integer in integer_list:
@@ -20,7 +19,7 @@ def sum_of_integers(integer_list):
 
 def main():
     process_readings('process_reading.txt')
-    
+
+
 if __name__ == '__main__':
     main()
-        
