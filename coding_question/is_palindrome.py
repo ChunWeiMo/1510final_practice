@@ -1,10 +1,10 @@
 def is_palindrome(word: str) -> bool:
     if len(word) == 0 or len(word) == 1:
         return True
-    elif word[0] != word[len(word)-1]:
+    elif word[0] != word[-1]:
         return False
     else:
-        return is_palindrome(word[1:len(word)-1])
+        return is_palindrome(word[1:-1])
 
 def main():
     print(f"'': {is_palindrome('')}")
@@ -16,4 +16,4 @@ def main():
     
 
 if __name__ == '__main__':
-    main(       )
+    main()
