@@ -80,3 +80,75 @@ Type defines the kind of things we can do to this object. For example, we can us
 3. print statement
 4. debugger
 5. unit test
+
+# 3 difference: dictionary vs. set
+1. key-value pairs <-> single elements
+2. value can be mutable <-> immutable
+3. method keys(), values(), items() <-> add(),union, difference()
+
+# variable length parameter vs arbitrary keyword arguments
+1. *args <-> **kwargs
+2. for do not know how many variable <-> for do not know what kinds of information
+3. accept as a tuple <-> accept as key-value pairs
+   
+# repeater
+```python
+def repeater(*stuff, **more_stuff):
+    for name in stuff:
+        print(name)
+    for key, value in more_stuff
+        print(key, value)
+
+repeater('name_a','name_b',name='name_c')
+```
+
+# documenting
+1. use triple quotation mark under the function head.
+2. Short one sentence to describe the purpose of this function
+3. one blank line
+4. addition comments if one sentence is not enough
+5. param: describe what the user should pass argument to this function
+6. precondition: the user should meet the precondition before using this function
+7. postcondition: if precondition is met, postcondition will show what the function will do
+8. return: describe what this function will return if precondition is met.
+
+# tuple vs. set
+1. parentheses <-> curly braces
+2. immutable <-> mutable
+3. order <-> no order
+
+# comparing floats
+We cannot compare two floats by float_A == float_B because representation error, for example 1/3. Instead, we use tolerance to check whether two float number are close or not.
+```python
+tolerance = 0.0001
+if abs(float_A - float_B) < tolerance:
+    print('These two float number are close')
+```
+We also can use math.isclose(float_A, float_B) to check it.
+
+# view <-> iterator
+1. view
+    View is a dynamic and virtual sequence. We can iterate a view. These 3 dictionary methods can return a view: items(), keys(), values()
+```python
+for key in dictionary_1.keys():
+    print(key)
+```
+
+2. iterator
+    If we pass an iterable to iter(), it will create a iterator object. Then, we can use next() to iterate this object until it raise StopIteration exception
+```python
+list_1 = [1,2,3]
+list_1_object = iter(list_1)
+next(list_1_object)
+next(list_1_object)
+next(list_1_object)
+```
+
+# privacy and encapsulation when developing class:
+we use dunder to create a private variable in the class
+```python
+
+class Dod()
+    def __init__(self, name):
+        self.__name = name
+``` 
