@@ -1,0 +1,3 @@
+The quick brown fox jumps over the lazy dog.
+Apples and oranges are different fruits.
+Python programming is fun and challenging.
